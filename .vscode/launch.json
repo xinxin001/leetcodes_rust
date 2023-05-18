@@ -1,0 +1,896 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'leetcodes_rust'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=leetcodes_rust",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "leetcodes_rust",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'leetcodes_rust'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=leetcodes_rust",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "leetcodes_rust",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable '122_buy_and_sell_stock_2'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=122_buy_and_sell_stock_2",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "122_buy_and_sell_stock_2",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable '122_buy_and_sell_stock_2'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=122_buy_and_sell_stock_2",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "122_buy_and_sell_stock_2",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable '205_isomorphic_strings'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=205_isomorphic_strings",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "205_isomorphic_strings",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable '205_isomorphic_strings'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=205_isomorphic_strings",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "205_isomorphic_strings",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable '714_buy_and_sell_stock_transaction_fee'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=714_buy_and_sell_stock_transaction_fee",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "714_buy_and_sell_stock_transaction_fee",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable '714_buy_and_sell_stock_transaction_fee'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=714_buy_and_sell_stock_transaction_fee",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "714_buy_and_sell_stock_transaction_fee",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable '213_house_robber_2'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=213_house_robber_2",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "213_house_robber_2",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable '213_house_robber_2'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=213_house_robber_2",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "213_house_robber_2",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable '918_maximum_sum_circular_subarray'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=918_maximum_sum_circular_subarray",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "918_maximum_sum_circular_subarray",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable '918_maximum_sum_circular_subarray'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=918_maximum_sum_circular_subarray",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "918_maximum_sum_circular_subarray",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable '740_delete_and_earn'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=740_delete_and_earn",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "740_delete_and_earn",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable '740_delete_and_earn'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=740_delete_and_earn",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "740_delete_and_earn",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable '1137_nth_fibonacci'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=1137_nth_fibonacci",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "1137_nth_fibonacci",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable '1137_nth_fibonacci'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=1137_nth_fibonacci",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "1137_nth_fibonacci",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable '1567_maximum_length_subarray_with_positive_product'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=1567_maximum_length_subarray_with_positive_product",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "1567_maximum_length_subarray_with_positive_product",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable '1567_maximum_length_subarray_with_positive_product'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=1567_maximum_length_subarray_with_positive_product",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "1567_maximum_length_subarray_with_positive_product",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable '1014_best_sightseeing_pair'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=1014_best_sightseeing_pair",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "1014_best_sightseeing_pair",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable '1014_best_sightseeing_pair'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=1014_best_sightseeing_pair",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "1014_best_sightseeing_pair",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable '509_fibonacci'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=509_fibonacci",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "509_fibonacci",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable '509_fibonacci'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=509_fibonacci",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "509_fibonacci",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable '53_maximum_subarray'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=53_maximum_subarray",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "53_maximum_subarray",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable '53_maximum_subarray'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=53_maximum_subarray",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "53_maximum_subarray",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable '746_min_cost_climbing_stairs'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=746_min_cost_climbing_stairs",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "746_min_cost_climbing_stairs",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable '746_min_cost_climbing_stairs'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=746_min_cost_climbing_stairs",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "746_min_cost_climbing_stairs",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable '45_jump_game_2'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=45_jump_game_2",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "45_jump_game_2",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable '45_jump_game_2'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=45_jump_game_2",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "45_jump_game_2",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable '42_trapping_rainwater'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=42_trapping_rainwater",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "42_trapping_rainwater",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable '42_trapping_rainwater'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=42_trapping_rainwater",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "42_trapping_rainwater",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable '121_buy_and_sell_stock'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=121_buy_and_sell_stock",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "121_buy_and_sell_stock",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable '121_buy_and_sell_stock'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=121_buy_and_sell_stock",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "121_buy_and_sell_stock",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable '17_letter_combinations_of_phone_number'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=17_letter_combinations_of_phone_number",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "17_letter_combinations_of_phone_number",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable '17_letter_combinations_of_phone_number'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=17_letter_combinations_of_phone_number",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "17_letter_combinations_of_phone_number",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable '70_climbing_stairs'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=70_climbing_stairs",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "70_climbing_stairs",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable '70_climbing_stairs'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=70_climbing_stairs",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "70_climbing_stairs",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable '413_arithmetic_slices'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=413_arithmetic_slices",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "413_arithmetic_slices",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable '413_arithmetic_slices'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=413_arithmetic_slices",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "413_arithmetic_slices",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable '55_jump_game'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=55_jump_game",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "55_jump_game",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable '55_jump_game'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=55_jump_game",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "55_jump_game",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable '309_buy_and_sell_stock_cooldown'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=309_buy_and_sell_stock_cooldown",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "309_buy_and_sell_stock_cooldown",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable '309_buy_and_sell_stock_cooldown'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=309_buy_and_sell_stock_cooldown",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "309_buy_and_sell_stock_cooldown",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable '139_word_break'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=139_word_break",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "139_word_break",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable '139_word_break'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=139_word_break",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "139_word_break",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable '198_house_robber'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=198_house_robber",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "198_house_robber",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable '198_house_robber'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=198_house_robber",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "198_house_robber",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable '152_maximum_product_subarray'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=152_maximum_product_subarray",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "152_maximum_product_subarray",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable '152_maximum_product_subarray'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=152_maximum_product_subarray",
+                    "--package=leetcodes_rust"
+                ],
+                "filter": {
+                    "name": "152_maximum_product_subarray",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

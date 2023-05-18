@@ -35,7 +35,7 @@ pub fn fsm_max_profit(prices: Vec<i32>) -> i32 {
 }
 fn main() {
     let prices = vec![1,2,3,0,2];
-    println!("{}", max_profit(prices));
+    println!("{}", fsm_max_profit(prices));
 }
 
 #[test]
