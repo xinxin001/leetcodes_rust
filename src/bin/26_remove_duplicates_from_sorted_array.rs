@@ -2,8 +2,8 @@ use std::collections::HashSet;
 
 fn main() {
     let mut nums = vec![0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
-    let k = remove_duplicates(&mut nums);
-    dbg!(nums, k);
+    assert_eq!(remove_duplicates(&mut nums), 5);
+    assert_eq!(iter_remove_duplicates(&mut nums), 5);
 }
 fn remove_duplicates(nums: &mut Vec<i32>) -> i32 {
     let mut last_num = nums[0];

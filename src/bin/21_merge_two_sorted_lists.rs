@@ -1,4 +1,3 @@
-use std::mem;
 #[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {
     pub val: i32,
@@ -33,23 +32,42 @@ fn merge_two_lists(
         }
     }
 }
-fn iter_merge_two_lists(
-    list1: Option<Box<ListNode>>,
-    list2: Option<Box<ListNode>>,
+
+pub fn iter_merge_two_lists(
+    mut list1: Option<Box<ListNode>>,
+    mut list2: Option<Box<ListNode>>,
 ) -> Option<Box<ListNode>> {
-    let mut result = list1;
-    let mut l2 = list2;
-    let mut lsmall = &mut result;
-    let lbig = &mut l2;
-    while lbig.is_some() {
-        if lsmall.is_none() || lsmall.as_ref()?.val > lbig.as_ref()?.val {
-            mem::swap(lsmall, lbig);
+    let mut ptr = &mut list1;
+
+    while list2.is_some() {
+        if ptr.is_none() || list2.as_ref()?.val < ptr.as_ref()?.val {
+            std::mem::swap(ptr, &mut list2);
         }
-        if lsmall.is_none() {
-            lsmall = &mut lsmall.as_mut()?.next;
-        }
+        ptr = &mut ptr.as_mut()?.next
     }
-    result
+
+    list1
 }
 
-fn main() {}
+fn main() {
+    let l1 = Some(Box::new(ListNode {
+        val: 1,
+        next: Some(Box::new(ListNode { val: 2, next: None })),
+    }));
+    let l2 = Some(Box::new(ListNode {
+        val: 1,
+        next: Some(Box::new(ListNode { val: 3, next: None })),
+    }));
+    let l3 = Some(Box::new(ListNode {
+        val: 1,
+        next: Some(Box::new(ListNode {
+            val: 1,
+            next: Some(Box::new(ListNode {
+                val: 2,
+                next: Some(Box::new(ListNode { val: 3, next: None })),
+            })),
+        })),
+    }));
+    assert_eq!(merge_two_lists(l1.clone(), l2.clone()), l3);
+    assert_eq!(iter_merge_two_lists(l1, l2), l3);
+}
