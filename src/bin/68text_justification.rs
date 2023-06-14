@@ -8,7 +8,7 @@ fn main() {
         "text".to_string(),
         "justification.".to_string(),
     ];
-    let ans = full_justify(words, 16);
+    let ans = Solution::full_justify(words, 16);
     println!("{:?}", ans);
     for word in ans {
         println!("{}", word.len());
@@ -62,69 +62,81 @@ pub fn full_justify(words: Vec<String>, max_width: i32) -> Vec<String> {
     return output;
 }
 
-pub fn alt_full_justify(words: Vec<String>, max_len: usize) -> Vec<String> {
-    let mut result = vec![];
+struct Solution {}
 
-    let mut line_len = 0;
-    let mut from = 0;
-
-    for idx in 0..words.len() {
-        line_len += words[idx].len();
-
-        if idx < words.len() - 1 {
-            if line_len + words[idx + 1].len() + (idx - from) + 1 <= max_len {
-                continue;
+impl Solution {
+    fn last_line(words: &[String], max_width: i32) -> String {
+        let mut res = "".to_owned();
+        for (i, w) in words.iter().enumerate() {
+            res.push_str(w);
+            if i < words.len() - 1 {
+                res.push(' ');
             }
         }
-
-        let mut line = String::with_capacity(max_len);
-
-        // do full justification if it's not the last line
-        if idx < words.len() - 1 {
-            let word_count = idx - from + 1;
-            let all_spaces = max_len - line_len;
-
-            let mut eq_spaces = 0;
-            let mut additional = 0;
-            if word_count > 1 {
-                eq_spaces = all_spaces / (word_count - 1);
-                additional = all_spaces % (word_count - 1);
-            }
-
-            for word in &words[from..=idx] {
-                if !line.is_empty() {
-                    let mut spaces = eq_spaces;
-                    if additional > 0 {
-                        spaces += 1;
-                        additional -= 1;
-                    }
-
-                    (0..spaces).for_each(|_| line.push(' '));
-                }
-
-                line.push_str(word);
-            }
-        } else {
-            for word in &words[from..] {
-                if !line.is_empty() {
-                    line.push(' ');
-                }
-                line.push_str(word);
-            }
+        for _ in 0..(max_width - res.len() as i32) {
+            res.push(' ');
         }
-
-        // in case of the last row, which should be left-justified
-        // or in case of a single word on the line
-        while line.len() < max_len {
-            line.push(' ');
-        }
-
-        result.push(line);
-
-        // reset the state for the next row
-        from = idx + 1;
-        line_len = 0;
+        res
     }
 
-    result
+    fn line_output(words: &[String], words_len: i32, max_width: i32) -> String {
+        let mut res = "".to_owned();
+        let space_slot_count = (words.len() as i32 - 1).max(1);
+        let space_count = max_width - words_len;
+        let mut slot_count = space_slot_count;
+        let space_per_slot = space_count / space_slot_count;
+        let mut rem_space = space_count - space_per_slot * space_slot_count;
+        for w in words {
+            res.push_str(w);
+            if slot_count > 0 {
+                for _ in 0..space_per_slot {
+                    res.push(' ');
+                }
+                slot_count -= 1;
+            }
+            if rem_space > 0 {
+                res.push(' ');
+                rem_space -= 1;
+            }
+        }
+        res
+    }
+
+    pub fn full_justify(words: Vec<String>, max_width: i32) -> Vec<String> {
+        let mut res = vec![];
+        let len_vec: Vec<i32> = words.iter().map(|i| i.len() as i32).collect();
+        let mut i = 0;
+        while i < words.len() {
+            let mut j = i;
+            let mut word_count = 0;
+            let mut word_len = 0;
+            let mut line_width = 0;
+            while j < words.len() {
+                let insert_len = if word_count == 0 {
+                    line_width + len_vec[j]
+                } else {
+                    line_width + len_vec[j] + 1
+                };
+                if insert_len <= max_width {
+                    line_width += len_vec[j];
+                    word_len += len_vec[j];
+                    word_count += 1;
+                    if word_count > 1 {
+                        line_width += 1;
+                    }
+                } else {
+                    break;
+                }
+                j += 1;
+            }
+            let s = if j < words.len() {
+                Solution::line_output(&words[i..j], word_len, max_width)
+            } else {
+                Solution::last_line(&words[i..j], max_width)
+            };
+            res.push(s);
+            i = j;
+        }
+        res
+    }
 }
