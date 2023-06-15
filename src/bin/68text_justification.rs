@@ -8,11 +8,14 @@ fn main() {
         "text".to_string(),
         "justification.".to_string(),
     ];
-    let ans = Solution::full_justify(words, 16);
-    println!("{:?}", ans);
-    for word in ans {
-        println!("{}", word.len());
-    }
+    let words1 = vec!["What", "must", "be", "acknowledgment", "shall", "be"]
+        .iter_mut()
+        .map(|x| x.to_string())
+        .collect();
+    //let ans = full_justify(words, 16);
+    let ans1 = full_justify(words1, 16);
+    //println!("{:?}", ans);
+    println!("{:?}", ans1);
 }
 
 /*
@@ -26,38 +29,42 @@ fn main() {
 pub fn full_justify(words: Vec<String>, max_width: i32) -> Vec<String> {
     let total_chars = words.iter().fold(0, |acc, word| acc + word.len());
     let line_count = (total_chars as f64 / max_width as f64).ceil() as usize;
-    let mut output = vec![];
+    let mut lines = vec![];
     let mut w_idx = 0;
-    for _ in 0..line_count {
-        let mut line_string = words[w_idx].to_string();
-        w_idx += 1;
-        while w_idx < words.len() && (line_string.len() + words[w_idx].len()) <= max_width as usize
-        {
-            line_string = format!("{} {}", line_string, words[w_idx]);
+    dbg!(&line_count);
+    for i in 0..line_count {
+        let mut line = vec![];
+        let mut char_len = 0;
+        dbg!(i);
+        while w_idx < words.len() && (char_len + words[w_idx].len()) <= max_width as usize {
+            println!("{w_idx}, {}, {char_len}", words[w_idx]);
+            char_len += words[w_idx].len();
+            line.push(words[w_idx].to_owned());
             w_idx += 1;
         }
-        output.push(line_string);
+        lines.push(line);
     }
-    for line in &mut output {
-        let ws: Vec<&str> = line.split(" ").collect();
-        let s_len = ws.iter().fold(0, |acc, w| acc + w.len());
+    let mut output = vec![];
+    dbg!(&lines);
+    for line in &mut lines {
+        let s_len = line.iter().fold(0, |acc, w| acc + w.len());
         let spaces_needed = max_width as usize - s_len;
-        if ws.len() == 1 {
-            *line = format!("{}{}", ws[0], " ".repeat(spaces_needed));
+        if line.len() == 1 {
+            output.push(format!("{}{}", line[0], " ".repeat(spaces_needed)));
             break;
         }
-        let gaps = if ws.len() > 1 { ws.len() - 1 } else { 1 };
+        let gaps = if line.len() > 1 { line.len() - 1 } else { 1 };
         let base_spaces = spaces_needed / gaps;
         let extra_spaces = spaces_needed % gaps;
         let mut out = String::new();
-        for (i, w) in ws.iter().enumerate() {
+        for (i, w) in line.iter().enumerate() {
             out.push_str(w);
-            if i < ws.len() - 1 {
+            if i < line.len() - 1 {
                 let spaces = base_spaces + if i < extra_spaces { 1 } else { 0 };
                 out.push_str(&" ".repeat(spaces));
             }
         }
-        *line = out
+        output.push(out)
     }
     return output;
 }
