@@ -12,9 +12,9 @@ fn main() {
         .iter_mut()
         .map(|x| x.to_string())
         .collect();
-    //let ans = full_justify(words, 16);
+    let ans = full_justify(words, 16);
     let ans1 = full_justify(words1, 16);
-    //println!("{:?}", ans);
+    println!("{:?}", ans);
     println!("{:?}", ans1);
 }
 
@@ -27,31 +27,28 @@ fn main() {
     - join by extra whitespaces needed
  */
 pub fn full_justify(words: Vec<String>, max_width: i32) -> Vec<String> {
-    let total_chars = words.iter().fold(0, |acc, word| acc + word.len());
-    let line_count = (total_chars as f64 / max_width as f64).ceil() as usize;
     let mut lines = vec![];
     let mut w_idx = 0;
-    dbg!(&line_count);
-    for i in 0..line_count {
+    while w_idx < words.len() {
         let mut line = vec![];
         let mut char_len = 0;
-        dbg!(i);
-        while w_idx < words.len() && (char_len + words[w_idx].len()) <= max_width as usize {
-            println!("{w_idx}, {}, {char_len}", words[w_idx]);
+        let mut spaces = 0;
+        while w_idx < words.len() && (spaces + char_len + words[w_idx].len()) <= max_width as usize
+        {
             char_len += words[w_idx].len();
             line.push(words[w_idx].to_owned());
             w_idx += 1;
+            spaces += if line.len() == 1 { 0 } else { 1 };
         }
         lines.push(line);
     }
     let mut output = vec![];
-    dbg!(&lines);
     for line in &mut lines {
         let s_len = line.iter().fold(0, |acc, w| acc + w.len());
         let spaces_needed = max_width as usize - s_len;
         if line.len() == 1 {
             output.push(format!("{}{}", line[0], " ".repeat(spaces_needed)));
-            break;
+            continue;
         }
         let gaps = if line.len() > 1 { line.len() - 1 } else { 1 };
         let base_spaces = spaces_needed / gaps;
