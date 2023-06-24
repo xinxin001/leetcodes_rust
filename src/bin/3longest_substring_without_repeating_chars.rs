@@ -1,5 +1,10 @@
 fn main() {}
 
+/*
+Optimized sliding window:
+time: O(n)
+space: O(min(m)) -> m is size of alphabet
+*/
 pub fn length_of_longest_substring(s: String) -> i32 {
     let mut max_len: usize = 0;
 
@@ -40,7 +45,7 @@ pub fn alt_length_of_longest_substring(s: String) -> i32 {
     return maxlen as i32;
 }
 
-use std::collections::HashSet;
+use std::collections::{HashMap, HashSet};
 pub fn hash_length_of_longest_substring(s: String) -> i32 {
     let (mut start, mut end) = (0, 0);
 
@@ -59,4 +64,45 @@ pub fn hash_length_of_longest_substring(s: String) -> i32 {
     }
 
     (end - start) as i32
+}
+
+/*
+Less optimal but interesting solution
+time: O(2n) -> O(n)
+space: O(n)
+ */
+pub fn althash_length_of_longest_substring(s: String) -> i32 {
+    let mut chars: HashMap<char, usize> = HashMap::new();
+    let mut left = 0;
+    let mut res = 0;
+    for (i, ch) in s.chars().enumerate() {
+        if chars.contains_key(&ch) {
+            let nxt_left = chars[&ch] + 1;
+            for n in left..=chars[&ch] {
+                chars.remove(&s.chars().nth(n).unwrap()).unwrap();
+            }
+            left = nxt_left;
+        }
+        chars.insert(ch, i);
+        res = res.max(chars.len())
+    }
+    return res as i32;
+}
+
+pub fn althash1_length_of_longest_substring(s: String) -> i32 {
+    let mut chars: HashMap<char, usize> = HashMap::new();
+    let mut left = 0;
+    let mut res = 0;
+    for (i, ch) in s.chars().enumerate() {
+        if chars.contains_key(&ch) {
+            let nxt_left = chars[&ch] + 1;
+            for n in left..=chars[&ch] {
+                chars.remove(&(s.as_bytes()[n] as char)).unwrap();
+            }
+            left = nxt_left;
+        }
+        chars.insert(ch, i);
+        res = res.max(chars.len())
+    }
+    return res as i32;
 }
