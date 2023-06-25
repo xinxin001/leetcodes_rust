@@ -13,6 +13,8 @@ Expand window from the right,
 as you have matched all necessary chars of target, start shrinking window from the left,
 Keep track of smallest window possible.
 Keep expanding right after the shrinking, to explore other possible windows
+time: O(s+t)
+space: O(s+t)
  */
 pub fn min_window(s: String, t: String) -> String {
     let n = s.len();
