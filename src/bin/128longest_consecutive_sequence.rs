@@ -32,3 +32,29 @@ pub fn longest_consecutive(nums: Vec<i32>) -> i32 {
     }
     return maxseq;
 }
+
+/*
+Best solution, we only build from numbers who are not part of a previous streak
+time: O(n+n) -> O(n)
+space: O(n)
+ */
+pub fn best_longest_consecutive(nums: Vec<i32>) -> i32 {
+    if nums.len() == 0 {
+        return 0;
+    }
+    let set: HashSet<i32> = HashSet::from_iter(nums);
+    let mut maxseq = 0;
+    for &num in set.iter() {
+        if !set.contains(&(num - 1)) {
+            let mut current_num = num;
+            let mut current_streak = 1;
+
+            while set.contains(&(current_num + 1)) {
+                current_num += 1;
+                current_streak += 1;
+            }
+            maxseq = maxseq.max(current_streak);
+        }
+    }
+    return maxseq;
+}
