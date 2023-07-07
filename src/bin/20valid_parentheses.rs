@@ -26,3 +26,22 @@ pub fn is_valid(s: String) -> bool {
 
     v.is_empty()
 }
+
+pub fn alt_is_valid(s: String) -> bool {
+    let mut brackets = Vec::new();
+
+    for bracket in s.chars() {
+        match bracket {
+            '{' => brackets.push('}'),
+            '(' => brackets.push(')'),
+            '[' => brackets.push(']'),
+
+            closing => {
+                if Some(closing) != brackets.pop() {
+                    return false;
+                }
+            }
+        }
+    }
+    brackets.is_empty()
+}
