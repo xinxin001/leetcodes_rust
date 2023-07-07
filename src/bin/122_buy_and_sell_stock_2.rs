@@ -16,18 +16,16 @@ pub fn max_profit(prices: Vec<i32>) -> i32 {
 
 pub fn peak_valley_max_profit(prices: Vec<i32>) -> i32 {
     let mut i = 0;
-    let mut valley = prices[0];
-    let mut peak = prices[0];
     let mut max_profit = 0;
     while i < prices.len() - 1 {
         while i < prices.len() - 1 && prices[i] >= prices[i + 1] {
             i += 1;
         }
-        valley = prices[i];
+        let valley = prices[i];
         while i < prices.len() - 1 && prices[i] <= prices[i + 1] {
             i += 1;
         }
-        peak = prices[i];
+        let peak = prices[i];
         max_profit += peak - valley;
     }
     max_profit

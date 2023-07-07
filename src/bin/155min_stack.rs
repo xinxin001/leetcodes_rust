@@ -7,6 +7,8 @@
  * let ret_4: i32 = obj.get_min();
  */
 fn main() {}
+
+#[allow(dead_code)]
 struct MinStack {
     stack: Vec<i32>,
     mins: Vec<i32>,
@@ -16,6 +18,7 @@ struct MinStack {
  * `&self` means the method takes an immutable reference.
  * If you need a mutable reference, change it to `&mut self` instead.
  */
+#[allow(dead_code)]
 impl MinStack {
     fn new() -> Self {
         MinStack {
@@ -49,6 +52,7 @@ impl MinStack {
     }
 }
 
+#[allow(dead_code)]
 struct MinStackPairs {
     s: Vec<(i32, i32)>,
 }
@@ -57,6 +61,7 @@ struct MinStackPairs {
  * `&self` means the method takes an immutable reference.
  * If you need a mutable reference, change it to `&mut self` instead.
  */
+#[allow(dead_code)]
 impl MinStackPairs {
     fn new() -> Self {
         MinStackPairs {

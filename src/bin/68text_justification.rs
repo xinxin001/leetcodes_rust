@@ -66,8 +66,10 @@ pub fn full_justify(words: Vec<String>, max_width: i32) -> Vec<String> {
     return output;
 }
 
+#[allow(dead_code)]
 struct Solution {}
 
+#[allow(dead_code)]
 impl Solution {
     fn last_line(words: &[String], max_width: i32) -> String {
         let mut res = "".to_owned();
