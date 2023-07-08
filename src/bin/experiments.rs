@@ -15,3 +15,8 @@ fn main() {
         }
     }
 }
+
+#[allow(dead_code)]
+fn number_of_ways(n_processes: i32, n_intervals: i32) -> i32 {
+    0
+}
