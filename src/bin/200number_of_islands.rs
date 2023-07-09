@@ -1,3 +1,5 @@
+use std::collections::VecDeque;
+
 fn main() {
     let grid: Vec<Vec<char>> = vec![
         ["1", "1", "1", "1", "0"],
@@ -37,4 +39,29 @@ fn traverse(r: usize, c: usize, row: usize, col: usize, grid: &mut Vec<Vec<char>
         traverse(r + 1, c, row, col, grid);
         traverse(r, c + 1, row, col, grid);
     }
+}
+
+pub fn bfs_num_islands(mut grid: Vec<Vec<char>>) -> i32 {
+    let (row, col) = (grid.len(), grid[0].len());
+    let mut count = 0;
+    for r in 0..row {
+        for c in 0..col {
+            if grid[r][c] == '1' {
+                count += 1;
+                let mut queue = VecDeque::new();
+                queue.push_back((r, c));
+                while !queue.is_empty() {
+                    let (x, y) = queue.pop_front().unwrap();
+                    if x < row && y < col && grid[x][y] == '1' {
+                        grid[x][y] = '0';
+                        queue.push_back((x.checked_sub(1).unwrap_or_default(), y));
+                        queue.push_back((x, y.checked_sub(1).unwrap_or_default()));
+                        queue.push_back((x + 1, y));
+                        queue.push_back((x, y + 1));
+                    }
+                }
+            }
+        }
+    }
+    count
 }
