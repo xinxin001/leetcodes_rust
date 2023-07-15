@@ -35,6 +35,21 @@ fn memo_climb_stairs(n: i32) -> i32 {
     return helper(0, n, &mut memo);
 }
 
+pub fn altmemo_climb_stairs(n: i32) -> i32 {
+    fn helper(n: i32, memo: &mut [i32]) -> i32 {
+        if n < 3 {
+            return n;
+        }
+        if memo[n as usize] > 0 {
+            return memo[n as usize];
+        }
+        memo[n as usize] = helper(n - 1, memo) + helper(n - 2, memo);
+        return memo[n as usize];
+    }
+    let mut memo = vec![0; n as usize + 1];
+    return helper(n, &mut memo);
+}
+
 fn dp_climb_stairs(n: i32) -> i32 {
     if n == 1 {
         return 1;
